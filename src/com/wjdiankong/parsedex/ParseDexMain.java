@@ -11,7 +11,7 @@ public class ParseDexMain {
 		FileInputStream fis = null;
 		ByteArrayOutputStream bos = null;
 		try{
-			fis = new FileInputStream("dex/Hello.dex");
+			fis = new FileInputStream("dex/classes.dex");
 			bos = new ByteArrayOutputStream();
 			byte[] buffer = new byte[1024];
 			int len = 0;

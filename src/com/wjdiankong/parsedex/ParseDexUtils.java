@@ -52,7 +52,7 @@ public class ParseDexUtils {
 	
 	private static List<String> stringList = new ArrayList<String>();
 	
-	//这里的map用来存储code数据，因为一个ClassCode都是以SourceFile为单位的，所以这里的key就是SourceFileName来存储
+	//这里的map用来存储code数据，因为一个ClassCode都是以class_idx为单位的，所以这里的key就是classname来存储
 	private static HashMap<String, ClassDefItem> classDataMap = new HashMap<String, ClassDefItem>();
 	
 	public static void praseDexHeader(byte[] byteSrc){
@@ -305,7 +305,7 @@ public class ParseDexUtils {
 			int sourceIdx = item.source_file_idx;
 			String sourceFile = stringList.get(sourceIdx);
 			System.out.println("sourceFile:"+sourceFile);
-			classDataMap.put(sourceFile, item);
+			classDataMap.put(classIdx+"", item);
 		}
 	}
 	
